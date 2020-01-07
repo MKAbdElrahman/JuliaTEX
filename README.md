@@ -11,11 +11,9 @@ Instead of installing the lexer in your Pygments installation, you can keep the 
 	code
 	 \end{minted}
 	 ```
-###
+### I also define the follwoing command and environement. 
 ```latex
-\usepackage{minted} 
 \newcommand{\jlinline}[1]{\mintinline{jl.py:Julia1Lexer -x}{#1}}
-
 \newminted[julia]{jl.py:Julia1Lexer -x}{frame=lines,framerule=1pt,linenos,fontfamily=courier,framesep=2mm,fontsize=\scriptsize,xleftmargin=21pt}
 ```
 ```latex
