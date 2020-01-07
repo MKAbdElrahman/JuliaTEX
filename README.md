@@ -25,3 +25,5 @@ f(x::Number) = x^2
 ```latex
 This is an inline  julia code \jlinline{f(x::Number) = x^2}.
 ```
+![Screenshot](/home/mohamed/JuliaTEX/fig_output/out.png)
+
