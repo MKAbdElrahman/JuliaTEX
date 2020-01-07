@@ -30,8 +30,9 @@ Instead of installing the lexer in your Pygments installation, you can keep the 
 	end	
 \end{jl}
 ```
+![Screenshot](listing.png)
+
 ```latex
 This is an inline code \jlinline{f(x::Array) = sin.(x)}
 ```
-![Screenshot](out.png)
-
+![Screenshot](inline.png)
