@@ -1,6 +1,4 @@
 # JuliaTEX
-Some source files I use when I need to typeset Julia in Latex documents.
-
 ## Introduction 
 I've been searching for how to typeset  Julia in TEX files, the problem is that package  Minted doesn't work for custom defined Julia types. I found this lexer solution on the Web.  
 ## Steps	
