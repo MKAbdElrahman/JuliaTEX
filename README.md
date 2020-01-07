@@ -10,13 +10,13 @@ Instead of installing the lexer in your Pygments installation, you can keep the 
 	 2. Specify the language in minted with \\begin\{minted\}\{jl.py:Julia1Lexer -x\}  code
 	 	\\end\{minted\}.
 
-### For a Listing  Environement
+### a julia listing  environement
 ```latex
 \begin{julia}
 f(x::Number) = x^2
 \end{julia}
 ```
-### For inline code 
+### an inline command 
 ```latex
 This is an inline  julia code \jlinline{f(x::Number) = x^2}.
 ```
