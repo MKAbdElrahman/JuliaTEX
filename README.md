@@ -2,7 +2,7 @@
 Some source files I use when I need to typeset Julia in Latex documents.
 
 ## Introduction 
-I've been searching for how typeset  Julia in TEX files, the problem is package  minted doesn't work for custom defined Julia types. I found this lexer solution on the Web.  
+I've been searching for how to typeset  Julia in TEX files, the problem is that package  Minted doesn't work for custom defined Julia types. I found this lexer solution on the Web.  
 ## Steps	
 Instead of installing the lexer in your Pygments installation, you can keep the lexer with your TeX documents.	
 
