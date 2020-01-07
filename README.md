@@ -15,15 +15,23 @@ Instead of installing the lexer in your Pygments installation, you can keep the 
 
 \newminted[julia]{jl.py:Julia1Lexer -x}{frame=lines,framerule=1pt,linenos,fontfamily=courier,framesep=2mm,fontsize=\scriptsize,xleftmargin=21pt}
 ```
-### a julia listing  environement
 ```latex
-\begin{julia}
-f(x::Number) = x^2
-\end{julia}
+\begin{jl}
+	abstract type IntegrationMethod end
+	struct Trapezoidal <: IntegrationMethod end
+	"""
+	integrate(x::AbstractVector, y::AbstractVector, ::Trapezoidal)
+	Use Trapezoidal rule.
+	"""
+	function integrate(x::AbstractVector, y::AbstractVector, ::Trapezoidal)
+		h = (x[2] - x[1])
+		I = h * (y[1] / 2 + sum(y[2:end-1]) + y[end] / 2)
+		return I
+	end	
+\end{jl}
 ```
-### an inline command 
 ```latex
-This is an inline  julia code \jlinline{f(x::Number) = x^2}.
+This is an inline code \jlinline{f(x::Array) = sin.(x)}
 ```
 ![Screenshot](out.png)
 
