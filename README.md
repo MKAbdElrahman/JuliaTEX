@@ -1,6 +1,6 @@
 # JuliaTEX
 ## Introduction 
-I've been searching for how to typeset  Julia in TEX files, the problem is that package  Minted doesn't work for custom defined and many standard julia types. I found a solution based on extending a local lexer with the new types.  
+I've been searching for how to typeset  Julia in TEX files, the problem is that package  Minted doesn't work for custom defined and many standard julia types. I found a solution based on extending a local lexer with new types.  
 ## Steps	
 Instead of installing the lexer in your Pygments installation, you can keep the lexer with your TeX documents.	
 
