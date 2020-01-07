@@ -8,6 +8,13 @@ Instead of installing the lexer in your Pygments installation, you can keep the 
 	 2. Specify the language in minted with \\begin\{minted\}\{jl.py:Julia1Lexer -x\}  code
 	 	\\end\{minted\}.
 
+###
+```latex
+\usepackage{minted} 
+\newcommand{\jlinline}[1]{\mintinline{jl.py:Julia1Lexer -x}{#1}}
+
+\newminted[julia]{jl.py:Julia1Lexer -x}{frame=lines,framerule=1pt,linenos,fontfamily=courier,framesep=2mm,fontsize=\scriptsize,xleftmargin=21pt}
+```
 ### a julia listing  environement
 ```latex
 \begin{julia}
