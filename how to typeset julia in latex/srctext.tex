@@ -1,0 +1,49 @@
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage{minted}
+\usepackage{hyperref}
+\begin{document}
+	\title{How to typeset  Julia in LATEX source files }
+	\date{}
+	\author{M.K AbdElrahman}
+	\maketitle
+
+\newcommand{\jlinline}[1]{\mintinline{jl.py:Julia1Lexer -x}{#1}}
+
+\newminted[jl]{jl.py:Julia1Lexer -x}{frame=lines,framerule=1pt,linenos,fontfamily=courier,framesep=2mm,fontsize=\scriptsize,xleftmargin=21pt}
+
+\section{Introduction}
+I've been searching for how typeset  Julia in TEX files, the problem is package  minted doesn't work for custom defined Julia types. I found this lexer solution on the Web.  
+\section{Steps}	
+Instead of installing the lexer in your Pygments installation, you can keep the lexer with your TeX documents.	
+\begin{enumerate}
+	 \item  If your lexer file is named "jl.py" and the class is "Julia1Lexer", put jl.py in the same directory as your main TeX source file
+	 \item Specify the language in minted with \textbf{ \\begin\{minted\}\{jl.py:Julia1Lexer -x\}  \#code
+	 	\\end\{minted\}.}
+\end{enumerate}
+\section{Inline code Example}
+This is an inline code \jlinline{f(x::Array) = sin.(x)}
+\section{Listing Example}
+\begin{jl}
+	abstract type IntegrationMethod end
+	struct Trapezoidal <: IntegrationMethod end
+	"""
+	integrate(x::AbstractVector, y::AbstractVector, ::Trapezoidal)
+	Use Trapezoidal rule.
+	"""
+	function integrate(x::AbstractVector, y::AbstractVector, ::Trapezoidal)
+		h = (x[2] - x[1])
+		I = h * (y[1] / 2 + sum(y[2:end-1]) + y[end] / 2)
+		return I
+	end
+	
+\end{jl}
+
+\section{References}
+\begin{itemize}
+	\item The solution steps  were suggested by 
+	\href{https://tex.stackexchange.com/users/11030/jonathan-schuster}{Jonathan Schuster} in answer to  \href{https://tex.stackexchange.com/questions/18083/how-to-add-custom-c-keywords-to-be-recognized-by-minted#comment930474_42392}{How to add custom C++ keywords to be recognized by Minted?}
+	\item  The custom lexer used here is a based on a laxer  modified by  Mykel J. Kochenderfer. \href{https://mykel.kochenderfer.com/}{Mykel J. Kochenderfer} and is available online  at \href{https://github.com/sisl/pygments-julia/tree/f2d897ceb5d66fa83fb1870ac047ff19987acc88}{Pygments Julia Lexer}
+\end{itemize}
+
+
+\end{document}

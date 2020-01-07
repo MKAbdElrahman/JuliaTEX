@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{abstract} \PYG{n+nv}{type} \PYG{n+nv}{IntegrationMethod} \PYG{k}{end}
+	\PYG{k}{struct} \PYG{n+nv}{Trapezoidal} \PYG{o}{\PYGZlt{}:} \PYG{n+nv}{IntegrationMethod} \PYG{k}{end}
+	\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s}{	integrate(x::AbstractVector, y::AbstractVector, ::Trapezoidal)}
+\PYG{l+s}{	Use Trapezoidal rule.}
+\PYG{l+s}{	\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+	\PYG{k}{function} \PYG{n+nf}{integrate}\PYG{p}{(}\PYG{n+nv}{x}\PYG{o}{::}\PYG{n+nb}{AbstractVector}\PYG{p}{,} \PYG{n+nv}{y}\PYG{o}{::}\PYG{n+nb}{AbstractVector}\PYG{p}{,} \PYG{o}{::}\PYG{n+nv}{Trapezoidal}\PYG{p}{)}
+		\PYG{n+nv}{h} \PYG{o}{=} \PYG{p}{(}\PYG{n+nv}{x}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n+nv}{x}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{])}
+		\PYG{k+kr}{I} \PYG{o}{=} \PYG{n+nv}{h} \PYG{o}{*} \PYG{p}{(}\PYG{n+nv}{y}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]} \PYG{o}{/} \PYG{l+m}{2} \PYG{o}{+} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n+nv}{y}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{:}\PYG{n+nb}{end}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{])} \PYG{o}{+} \PYG{n+nv}{y}\PYG{p}{[}\PYG{n+nb}{end}\PYG{p}{]} \PYG{o}{/} \PYG{l+m}{2}\PYG{p}{)}
+		\PYG{k}{return} \PYG{k+kr}{I}
+	\PYG{k}{end}
+	
+\end{Verbatim}
